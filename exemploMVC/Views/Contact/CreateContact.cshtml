@@ -1,0 +1,42 @@
+﻿@model exemploMVC.ViewModels.ContactViewModel
+
+<h2>Create Contact</h2>
+
+@using (Html.BeginForm("CreateContact", "Contact"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors")
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.City)
+        @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.State)
+        @Html.TextBoxFor(m => m.State, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.CPF)
+        @Html.TextBoxFor(m => m.CPF, new { @class = "form-control" })
+    </div>
+
+    <div>
+        @Html.HiddenFor(m => m.ContactID)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+

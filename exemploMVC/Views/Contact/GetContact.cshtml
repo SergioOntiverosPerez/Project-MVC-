@@ -1,0 +1,45 @@
+﻿@model exemploMVC.ViewModels.ContactViewModel
+
+<h2>Contact</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            <label asp-for="Name"></label>
+        </dt>
+        <dd>
+            <span>@Model.Name</span>
+        </dd>
+
+        <dt>
+            <label asp-for="City"></label>
+        </dt>
+        <dd>
+            <span>@Model.City</span>
+        </dd>
+
+        <dt>
+            <label asp-for="State"></label>
+        </dt>
+        <dd>
+            <span>@Model.State</span>
+        </dd>
+
+        <dt>
+            <label asp-for="CPF"></label>
+        </dt>
+        <dd>
+            <span>@Model.CPF</span>
+        </dd>
+
+        <dt>
+            <label asp-for="Email"></label>
+        </dt>
+        <dd>
+            @if (!string.IsNullOrWhiteSpace(Model.Email))
+            {
+                <a href="mailto:@Model.Email">@Model.Email</a>
+            }
+        </dd>
+    </dl>
+</div>

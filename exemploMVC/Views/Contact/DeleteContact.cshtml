@@ -1,0 +1,17 @@
+﻿@model exemploMVC.ViewModels.ContactViewModel
+
+<h2>Delete Contact</h2>
+
+@using (Html.BeginForm("DeleteContact", "Contact"))
+{
+    <div>
+        @Html.HiddenFor(m => m.ContactID)
+    </div>
+
+    <div class="form-group">
+        <label>Please confirm to delete contact</label>
+        <br />
+        @Html.TextBoxFor(m => m.Name)
+    </div>
+    <button type="submit" class="btn btn-primary">Delete</button>
+}

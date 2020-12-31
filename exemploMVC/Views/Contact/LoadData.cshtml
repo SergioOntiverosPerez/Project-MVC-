@@ -1,0 +1,33 @@
+﻿@model exemploMVC.ViewModels.ContactsViewModel
+
+<table class="table table-striped table-bordered" id="contacts">
+    <thead>
+        <tr>
+            <th>ContactId</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>ContactId</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var contact in Model.Contacts)
+        {
+            <tr>
+                <td>@contact.ContactID</td>
+                <td>@contact.Name</td>
+                <td>
+                    @if (!String.IsNullOrWhiteSpace(contact.Email))
+                    {
+                        <a href="mailto:@contact.Email">@contact.Email</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
